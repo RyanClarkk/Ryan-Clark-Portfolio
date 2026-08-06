@@ -119,7 +119,7 @@
 
   /* ---------- Hero / console banner ---------- */
   .hero{
-    padding:0;
+    padding:0 !important;
     border-bottom:1px solid var(--line);
   }
   .hero-content{
@@ -297,7 +297,7 @@
   .email-line a:hover{ color:var(--teal); text-decoration-color:var(--teal); }
 
   /* ---------- Section shell ---------- */
-  section{ padding:76px 0; border-bottom:1px solid var(--line); }
+  section:not(.hero){ padding:76px 0; border-bottom:1px solid var(--line); }
   section:last-of-type{ border-bottom:none; }
 
   .eyebrow{
