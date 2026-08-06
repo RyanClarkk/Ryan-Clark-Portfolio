@@ -79,7 +79,7 @@
   }
   .rail-hop{
     position:relative;
-    padding:14px 0;
+    padding:14px 0 14px 24px;
     font-family:var(--mono);
     font-size:11px;
     color:var(--muted-dim);
@@ -89,7 +89,7 @@
   .rail-hop::before{
     content:'';
     position:absolute;
-    left:0;
+    left:5px;
     top:50%;
     transform:translate(-50%,-50%);
     width:11px; height:11px;
@@ -143,11 +143,36 @@
   }
   @keyframes blink{ 50%{ opacity:0; } }
 
+  .hero-banner{
+    position:relative;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    height:220px;
+    overflow:hidden;
+    margin-bottom:-46px;
+  }
+  .hero-banner img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(0.85) brightness(0.55);
+  }
+  .hero-banner::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(15,23,32,0.05) 0%, var(--bg) 94%);
+  }
+  @media (max-width:600px){
+    .hero-banner{ height:150px; margin-bottom:-36px; }
+  }
+
   .id-row{
     display:flex;
     align-items:center;
     gap:22px;
     margin-bottom:6px;
+    position:relative;
+    z-index:2;
   }
   .avatar{
     position:relative;
@@ -157,6 +182,7 @@
     overflow:hidden;
     border:1px solid var(--line);
     background:var(--bg-panel);
+    box-shadow:0 0 0 4px var(--bg);
   }
   .avatar img{
     width:100%; height:100%;
@@ -448,9 +474,14 @@
 
   <section class="hero" id="top">
     <div class="prompt-line"><span class="sym">rclark@noc</span>:~$ whoami<span class="cursor"></span></div>
+
+    <div class="hero-banner">
+      <img src="assets/banner.jpg" alt="" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.marginTop='0';">
+    </div>
+
     <div class="id-row">
       <div class="avatar">
-        <img src="assets/headshot.jpg" alt="Ryan Clark" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="assets/clark.jpg" alt="Ryan Clark" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="fallback">RC</div>
       </div>
       <h1>Ryan Clark</h1>
