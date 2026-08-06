@@ -119,17 +119,12 @@
 
   /* ---------- Hero / console banner ---------- */
   .hero{
-    border-bottom:1px solid var(--line);
-  }
-  .hero-top{
-    padding-top:32px;
-  }
-  .hero-content{
-    min-height:66vh;
+    min-height:92vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding:0 0 60px;
+    padding:80px 0 60px;
+    border-bottom:1px solid var(--line);
   }
   .prompt-line{
     font-family:var(--mono);
@@ -478,14 +473,12 @@
 <div class="wrap">
 
   <section class="hero" id="top">
-    <div class="hero-top">
-      <div class="prompt-line"><span class="sym">rclark@noc</span>:~$ whoami<span class="cursor"></span></div>
-      <div class="hero-banner">
-        <img src="assets/banner.jpg" alt="" onerror="this.parentElement.style.display='none';">
-      </div>
+    <div class="prompt-line"><span class="sym">rclark@noc</span>:~$ whoami<span class="cursor"></span></div>
+
+    <div class="hero-banner">
+      <img src="assets/banner.jpg" alt="" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.marginTop='0';">
     </div>
 
-    <div class="hero-content">
     <div class="id-row">
       <div class="avatar">
         <img src="assets/clark.jpg" alt="Ryan Clark" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -509,7 +502,6 @@
       <a class="port" href="https://www.goosecustoms.net/" target="_blank" rel="noopener"><span class="tag">www</span>goosecustoms.net</a>
     </div>
     <p class="email-line"><a href="mailto:rclarkaz07@gmail.com">rclarkaz07@gmail.com</a></p>
-    </div>
   </section>
 
   <section id="about">
